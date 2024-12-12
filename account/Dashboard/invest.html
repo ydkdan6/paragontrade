@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invest - Paragontradeinvestment</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/invest.css" />
+</head>
+<body>
+    <div class="app-container">
+        <div class="sidebar-overlay"></div>
+
+        <aside class="sidebar">
+            <!-- Sidebar content remains the same -->
+            <div class="sidebar-header">
+                <div class="user-info">
+                    <div class="user-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="user-details">
+                        <h3>Danilo</h3>
+                        <p>Premium Member</p>
+                    </div>
+                </div>
+                <button class="collapse-toggle">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="../Dashboard/dashboard.html" class="nav-item" title="Dashboard">
+                    <i class="fas fa-home"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="#" class="nav-item" title="Profit Record">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Profit Record</span>
+                </a>
+                <a href="#" class="nav-item" title="Transactions History">
+                    <i class="fas fa-history"></i>
+                    <span>Transactions History</span>
+                </a>
+                <a href="#" class="nav-item" title="Crypto Exchange">
+                    <i class="fas fa-coins"></i>
+                    <span>Crypto Exchange</span>
+                </a>
+                <a href="invest.html" class="nav-item active" title="Invest">
+                    <i class="fas fa-money-bill-trend-up"></i>
+                    <span>Invest</span>
+                </a>
+                <a href="#" class="nav-item" title="Refer Users">
+                    <i class="fas fa-users"></i>
+                    <span>Refer Users</span>
+                </a>
+                <a href="#" class="nav-item" title="Help/Support">
+                    <i class="fas fa-headset"></i>
+                    <span>Help/Support</span>
+                </a>
+            </nav>
+        </aside>
+
+        <div class="main-content">
+            <nav class="top-nav">
+                <div class="nav-left">
+                    <button class="menu-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <h1>Paragontradeinvestment</h1>
+                </div>
+                <div class="nav-right">
+                    <button class="btn btn-primary">Fund your Account</button>
+                    <button class="btn btn-secondary">Withdraw Funds</button>
+                    <div class="theme-toggle">
+                        <input type="checkbox" id="theme-switch">
+                        <label for="theme-switch"></label>
+                    </div>
+                    <div class="kyc-status">KYC</div>
+                    <div class="user-profile">
+                        <i class="fas fa-user"></i>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="investment-content">
+                <div class="section-header">
+                    <h2>Choose Your Investment Plan</h2>
+                    <p>Select the investment plan that best suits your goals</p>
+                </div>
+
+                <div class="investment-plans">
+                    <div class="plan-card">
+                        <div class="plan-header">
+                            <h3>Basic Plan</h3>
+                            <p class="plan-range">$500 - $4,000</p>
+                        </div>
+                        <div class="plan-features">
+                            <ul>
+                                <li><i class="fas fa-check"></i> Daily ROI</li>
+                                <li><i class="fas fa-check"></i> 24/7 Support</li>
+                                <li><i class="fas fa-check"></i> Real-time Trading</li>
+                            </ul>
+                        </div>
+                        <button class="btn btn-primary select-plan" data-plan="basic">Select Basic Plan</button>
+                    </div>
+
+                    <div class="plan-card">
+                        <div class="plan-header">
+                            <h3>Pro Plan</h3>
+                            <p class="plan-range">$5,000 - $20,000</p>
+                        </div>
+                        <div class="plan-features">
+                            <ul>
+                                <li><i class="fas fa-check"></i> Enhanced Daily ROI</li>
+                                <li><i class="fas fa-check"></i> Priority Support</li>
+                                <li><i class="fas fa-check"></i> Advanced Trading Tools</li>
+                            </ul>
+                        </div>
+                        <button class="btn btn-primary select-plan" data-plan="pro">Select Pro Plan</button>
+                    </div>
+
+                    <div class="plan-card">
+                        <div class="plan-header">
+                            <h3>Premium Plan</h3>
+                            <p class="plan-range">$50,000</p>
+                        </div>
+                        <div class="plan-features">
+                            <ul>
+                                <li><i class="fas fa-check"></i> Maximum ROI</li>
+                                <li><i class="fas fa-check"></i> VIP Support</li>
+                                <li><i class="fas fa-check"></i> Exclusive Features</li>
+                            </ul>
+                        </div>
+                        <button class="btn btn-primary select-plan" data-plan="premium">Select Premium Plan</button>
+                    </div>
+
+                    <div class="plan-card">
+                        <div class="plan-header">
+                            <h3>Gold Plan</h3>
+                            <p class="plan-range">1 BTC</p>
+                        </div>
+                        <div class="plan-features">
+                            <ul>
+                                <li><i class="fas fa-check"></i> Elite ROI</li>
+                                <li><i class="fas fa-check"></i> Dedicated Manager</li>
+                                <li><i class="fas fa-check"></i> Custom Solutions</li>
+                            </ul>
+                        </div>
+                        <button class="btn btn-primary select-plan" data-plan="gold">Select Gold Plan</button>
+                    </div>
+                </div>
+
+                <!-- Payment Modal -->
+            <div id="paymentModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h2>Select Payment Method</h2>
+                    <div class="crypto-options">
+                        <div class="crypto-option" data-crypto="bitcoin">
+                            <img src="https://cryptologos.cc/logos/bitcoin-btc-logo.png" alt="Bitcoin">
+                            <span>Bitcoin</span>
+                        </div>
+                        <div class="crypto-option" data-crypto="ethereum">
+                            <img src="https://cryptologos.cc/logos/ethereum-eth-logo.png" alt="Ethereum">
+                            <span>Ethereum</span>
+                        </div>
+                        <div class="crypto-option" data-crypto="usdt">
+                            <img src="https://cryptologos.cc/logos/tether-usdt-logo.png" alt="USDT">
+                            <span>USDT</span>
+                        </div>
+                        <div class="crypto-option" data-crypto="bnb">
+                            <img src="https://cryptologos.cc/logos/binance-coin-bnb-logo.png" alt="BNB">
+                            <span>BNB</span>
+                        </div>
+                        <div class="crypto-option" data-crypto="dogecoin">
+                            <img src="https://cryptologos.cc/logos/dogecoin-doge-logo.png" alt="Dogecoin">
+                            <span>Dogecoin</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+               <!-- Wallet Address Modal -->
+            <div id="walletModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h2>Complete Your Payment</h2>
+                    <div class="wallet-details">
+                        <p>Send payment to the following wallet address:</p>
+                        <div class="wallet-address">
+                            <input type="text" id="walletAddress" readonly>
+                            <button class="btn btn-secondary" id="copyAddress">
+                                <i class="fas fa-copy"></i> Copy
+                            </button>
+                        </div>
+                        <div class="proof-upload">
+                            <h3>Upload Payment Proof</h3>
+                            <input type="file" id="proofUpload" accept="image/*">
+                            <button class="btn btn-primary" id="submitProof">Submit Proof</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+                <!-- Toast Notification -->
+                <div id="toast" class="toast"></div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="assets/js/alerts.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/sidebar.js"></script>
+    <script src="assets/js/theme.js"></script>
+    <script type="module" src="assets/js/invest.js"></script>
+</body>
+</html>

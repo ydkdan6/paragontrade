@@ -3,7 +3,7 @@ function showWelcomeAlert() {
       <div class="alert-overlay"></div>
       <div class="custom-alert">
         <i class="fas fa-check-circle alert-icon"></i>
-        <h2 class="alert-title">Welcome to TSC-assetpro!</h2>
+        <h2 class="alert-title">Welcome to Paragontradeinvestment!</h2>
         <p class="alert-message">Congratulations! Your account has been credited with $50.00</p>
         <button class="alert-button">Start Trading</button>
       </div>
