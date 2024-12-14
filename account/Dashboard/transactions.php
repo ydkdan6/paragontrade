@@ -25,6 +25,8 @@ try {
     $transactions = [];
     error_log("Transaction fetch error: " . $e->getMessage());
 }
+
+$username = $_SESSION['username'];
 ?>
 
 <body>
