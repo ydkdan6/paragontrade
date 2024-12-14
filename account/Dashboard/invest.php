@@ -1,3 +1,15 @@
+<?php
+session_start();
+
+// Check if user is logged in
+if (!isset($_SESSION['user_id'])) {
+    header("Location: login.php");
+    exit;
+}
+
+$username = $_SESSION['username'];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,50 +26,7 @@
 
         <aside class="sidebar">
             <!-- Sidebar content remains the same -->
-            <div class="sidebar-header">
-                <div class="user-info">
-                    <div class="user-avatar">
-                        <i class="fas fa-user"></i>
-                    </div>
-                    <div class="user-details">
-                        <h3>Danilo</h3>
-                        <p>Premium Member</p>
-                    </div>
-                </div>
-                <button class="collapse-toggle">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-            </div>
-            <nav class="sidebar-nav">
-                <a href="../Dashboard/dashboard.html" class="nav-item" title="Dashboard">
-                    <i class="fas fa-home"></i>
-                    <span>Dashboard</span>
-                </a>
-                <a href="#" class="nav-item" title="Profit Record">
-                    <i class="fas fa-chart-line"></i>
-                    <span>Profit Record</span>
-                </a>
-                <a href="#" class="nav-item" title="Transactions History">
-                    <i class="fas fa-history"></i>
-                    <span>Transactions History</span>
-                </a>
-                <a href="#" class="nav-item" title="Crypto Exchange">
-                    <i class="fas fa-coins"></i>
-                    <span>Crypto Exchange</span>
-                </a>
-                <a href="invest.html" class="nav-item active" title="Invest">
-                    <i class="fas fa-money-bill-trend-up"></i>
-                    <span>Invest</span>
-                </a>
-                <a href="#" class="nav-item" title="Refer Users">
-                    <i class="fas fa-users"></i>
-                    <span>Refer Users</span>
-                </a>
-                <a href="#" class="nav-item" title="Help/Support">
-                    <i class="fas fa-headset"></i>
-                    <span>Help/Support</span>
-                </a>
-            </nav>
+            <?php include 'includes/sidebar.php'; ?>
         </aside>
 
         <div class="main-content">
@@ -89,31 +58,33 @@
                 </div>
 
                 <div class="investment-plans">
-                    <div class="plan-card">
+                    <div class="plan-card" data-min="500" data-max="5000">
                         <div class="plan-header">
                             <h3>Basic Plan</h3>
-                            <p class="plan-range">$500 - $4,000</p>
+                            <p class="plan-range">$500 - $5,000</p>
                         </div>
                         <div class="plan-features">
                             <ul>
                                 <li><i class="fas fa-check"></i> Daily ROI</li>
                                 <li><i class="fas fa-check"></i> 24/7 Support</li>
                                 <li><i class="fas fa-check"></i> Real-time Trading</li>
+                                <li><i class="fas fa-check"></i> 24 hours Duration</li>
                             </ul>
                         </div>
                         <button class="btn btn-primary select-plan" data-plan="basic">Select Basic Plan</button>
                     </div>
 
-                    <div class="plan-card">
+                    <div class="plan-card" data-min="5000" data-max="10000">
                         <div class="plan-header">
                             <h3>Pro Plan</h3>
-                            <p class="plan-range">$5,000 - $20,000</p>
+                            <p class="plan-range">$5,000 - $10,000</p>
                         </div>
                         <div class="plan-features">
                             <ul>
                                 <li><i class="fas fa-check"></i> Enhanced Daily ROI</li>
                                 <li><i class="fas fa-check"></i> Priority Support</li>
                                 <li><i class="fas fa-check"></i> Advanced Trading Tools</li>
+                                <li><i class="fas fa-check"></i> 2 Days Duration</li>
                             </ul>
                         </div>
                         <button class="btn btn-primary select-plan" data-plan="pro">Select Pro Plan</button>
@@ -122,13 +93,14 @@
                     <div class="plan-card">
                         <div class="plan-header">
                             <h3>Premium Plan</h3>
-                            <p class="plan-range">$50,000</p>
+                            <p class="plan-range">$10,000 - $50,000</p>
                         </div>
                         <div class="plan-features">
                             <ul>
                                 <li><i class="fas fa-check"></i> Maximum ROI</li>
                                 <li><i class="fas fa-check"></i> VIP Support</li>
                                 <li><i class="fas fa-check"></i> Exclusive Features</li>
+                                <li><i class="fas fa-check"></i> 3 Days Duration</li>
                             </ul>
                         </div>
                         <button class="btn btn-primary select-plan" data-plan="premium">Select Premium Plan</button>
@@ -137,13 +109,14 @@
                     <div class="plan-card">
                         <div class="plan-header">
                             <h3>Gold Plan</h3>
-                            <p class="plan-range">1 BTC</p>
+                            <p class="plan-range">$50,000 - Unlimited</p>
                         </div>
                         <div class="plan-features">
                             <ul>
                                 <li><i class="fas fa-check"></i> Elite ROI</li>
                                 <li><i class="fas fa-check"></i> Dedicated Manager</li>
                                 <li><i class="fas fa-check"></i> Custom Solutions</li>
+                                <li><i class="fas fa-check"></i> 7 Days Duration</li>
                             </ul>
                         </div>
                         <button class="btn btn-primary select-plan" data-plan="gold">Select Gold Plan</button>
@@ -155,6 +128,11 @@
                 <div class="modal-content">
                     <span class="close">&times;</span>
                     <h2>Select Payment Method</h2>
+                    <div class="amount-input">
+                            <label for="investmentAmount">Investment Amount:</label>
+                            <input type="number" id="investmentAmount"  name="investmentAmount" placeholder="Enter amount" style="height: 29px; width: 280px; padding-left: 5px; border-radius: 10px;">
+                            <p id="amountWarning" class="" style="color: red;"></p>
+                        </div>
                     <div class="crypto-options">
                         <div class="crypto-option" data-crypto="bitcoin">
                             <img src="https://cryptologos.cc/logos/bitcoin-btc-logo.png" alt="Bitcoin">
@@ -188,6 +166,8 @@
                     <h2>Complete Your Payment</h2>
                     <div class="wallet-details">
                         <p>Send payment to the following wallet address:</p>
+
+                        <p class="selected-amount"></p>
                         <div class="wallet-address">
                             <input type="text" id="walletAddress" readonly>
                             <button class="btn btn-secondary" id="copyAddress">
@@ -196,7 +176,7 @@
                         </div>
                         <div class="proof-upload">
                             <h3>Upload Payment Proof</h3>
-                            <input type="file" id="proofUpload" accept="image/*">
+                            <input type="file" id="proofUpload" name="paymentProof" accept="image/*">
                             <button class="btn btn-primary" id="submitProof">Submit Proof</button>
                         </div>
                     </div>
@@ -209,10 +189,10 @@
         </div>
     </div>
 
-    <script type="module" src="assets/js/alerts.js"></script>
-    <script src="assets/js/main.js"></script>
+    <script src="assets/js/side-main.js"></script>
+    <!-- <script src="assets/js/main.js"></script> -->
     <script src="assets/js/sidebar.js"></script>
     <script src="assets/js/theme.js"></script>
-    <script type="module" src="assets/js/invest.js"></script>
+    <script src="assets/js/invest.js"></script>
 </body>
 </html>

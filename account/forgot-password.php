@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
     
-<!-- Mirrored from Paragontradeinvestment.com/account/forgot-password by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 10 Dec 2024 20:24:38 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <head>
         
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="IpM2jsxM0fQUppANKiGJEEg90tBBpo8AIqbWJq1u">
         <title>Paragontradeinvestment | Forgot your password</title>
         
         
@@ -22,6 +19,8 @@
             <!-- Main Css -->
             <link href="temp/css/style.css" rel="stylesheet" type="text/css" />
             <link href="temp/css/colors/default.css" rel="stylesheet">
+
+            <link href="https://cdn.jsdelivr.net/npm/toastify-js@1.12.0/src/toastify.min.css" rel="stylesheet">
         
 
     </head>
@@ -39,13 +38,20 @@
                     <div class="bg-white shadow card login-page roundedd border-1 ">
                         <div class="card-body">
                             <h4 class="text-center card-title">Password Reset</h4>
-                            <form method="POST" action="https://Paragontradeinvestment.com/account/forgot-password"  class="mt-4 login-form">
-                                 <input type="hidden" name="_token" value="IpM2jsxM0fQUppANKiGJEEg90tBBpo8AIqbWJq1u">                                <div class="row">
+                            <?php if (isset($_SESSION['error'])): ?>
+                                <div class="alert alert-danger">
+                                    <?php 
+                                        echo $_SESSION['error'];
+                                        unset($_SESSION['error']);
+                                    ?>
+                                </div>
+                            <?php endif; ?>
+                            <form method="POST" action="password-reset-request.php"  class="mt-4 login-form">
                                     <div class="col-lg-12">
                                         <div class="form-group">
                                             <label>Your Email <span class="text-danger">*</span></label>
                                             <div class="position-relative">
-                                                <i data-feather="mail" class="fea icon-sm icons"></i>
+                                                <i class="fea icon-sm icons"></i>
                                                 <input type="email" class="pl-5 form-control" name ="email" value="" id="email" placeholder="name@example.com" required>
                                             </div>
                                                                                     </div>
@@ -61,7 +67,7 @@
 
                                     <div class="text-center col-12">
                                         <p class="mt-3 mb-0"><small class="mr-2 text-dark">Repeat Login
-                                                ?</small> <a href="login.html"
+                                                ?</small> <a href="login.php"
                                                 class="text-dark font-weight-bold">Login</a></p>
                                     </div>
                                     <!--end col-->
@@ -73,6 +79,21 @@
                                 </div>
                                 <!--end row-->
                             </form>
+                             <!-- Show success message as a toast if set -->
+                             <?php if (isset($_SESSION['message'])): ?>
+                                <script src="https://cdn.jsdelivr.net/npm/toastify-js@1.12.0/src/toastify.min.js"></script>
+                                <script>
+                                    Toastify({
+                                        text: "<?php echo $_SESSION['message']; ?>",
+                                        duration: 5000, // 5 seconds
+                                        close: true,
+                                        gravity: "top", // top or bottom
+                                        position: "right", // left, center, right
+                                        backgroundColor: "#4CAF50", // green
+                                    }).showToast();
+                                    <?php unset($_SESSION['message']); // Clear message after displaying ?>
+                                </script>
+                            <?php endif; ?>
                         </div>
                     </div>
                     <!---->

@@ -1,3 +1,15 @@
+<?php
+session_start();
+
+// Check if user is logged in
+if (!isset($_SESSION['user_id'])) {
+    header("Location: login.php");
+    exit;
+}
+
+$username = $_SESSION['username'];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,57 +24,14 @@
         <div class="sidebar-overlay"></div>
 
         <aside class="sidebar">
-            <div class="sidebar-header">
-                <div class="user-info">
-                    <div class="user-avatar">
-                        <i class="fas fa-user"></i>
-                    </div>
-                    <div class="user-details">
-                        <h3>Danilo</h3>
-                        <p>Premium Member</p>
-                    </div>
-                </div>
-                <button class="collapse-toggle">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-            </div>
-            <nav class="sidebar-nav">
-                <a href="#" class="nav-item active" title="Dashboard">
-                    <i class="fas fa-home"></i>
-                    <span>Dashboard</span>
-                </a>
-                <a href="#" class="nav-item" title="Profit Record">
-                    <i class="fas fa-chart-line"></i>
-                    <span>Profit Record</span>
-                </a>
-                <a href="#" class="nav-item" title="Transactions History">
-                    <i class="fas fa-history"></i>
-                    <span>Transactions History</span>
-                </a>
-                <a href="#" class="nav-item" title="Crypto Exchange">
-                    <i class="fas fa-coins"></i>
-                    <span>Crypto Exchange</span>
-                </a>
-                <a href="invest.html" class="nav-item" title="Invest">
-                    <i class="fas fa-money-bill-trend-up"></i>
-                    <span>Invest</span>
-                </a>
-                <a href="#" class="nav-item" title="Refer Users">
-                    <i class="fas fa-users"></i>
-                    <span>Refer Users</span>
-                </a>
-                <a href="#" class="nav-item" title="Help/Support">
-                    <i class="fas fa-headset"></i>
-                    <span>Help/Support</span>
-                </a>
-            </nav>
+        <?php include 'includes/sidebar.php'; ?>
         </aside>
 
         <div class="main-content">
             <nav class="top-nav">
                 <div class="nav-left">
                     <button class="menu-toggle">
-                        <i class="fas fa-bars"></i>
+                        
                     </button>
                     <h1>Paragontradeinvestment</h1>
                 </div>
@@ -82,7 +51,7 @@
 
             <div class="dashboard-content">
                 <div class="welcome-message">
-                    <h2>Welcome, Danilo!</h2>
+                    <h2>Welcome, <?php echo htmlspecialchars($username); ?>!</h2>
                     <p>Welcome to Paragontradeinvestment 🎉</p>
                 </div>
 

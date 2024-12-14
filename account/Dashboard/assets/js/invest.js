@@ -1,65 +1,127 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Modal elements
+    // DOM Elements
     const paymentModal = document.getElementById('paymentModal');
     const walletModal = document.getElementById('walletModal');
-    const closeButtons = document.querySelectorAll('.close');
-    
-    // Wallet addresses for different cryptocurrencies
+    const investmentAmountInput = document.getElementById('investmentAmount');
+    const amountWarning = document.getElementById('amountWarning');
+    const walletAddressInput = document.getElementById('walletAddress');
+    const copyAddressButton = document.getElementById('copyAddress');
+    const submitProofButton = document.getElementById('submitProof');
+    const selectedAmount = document.getElementsByClassName("selected-amount");
+    const toast = document.getElementById('toast');
+
+    // Constants
     const walletAddresses = {
         bitcoin: '1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa',
         ethereum: '0x742d35Cc6634C0532925a3b844Bc454e4438f44e',
         usdt: 'TXn6sEjrwBXYqvQayYqYh7zVjsYyUnDPFi',
         bnb: 'bnb1jxfh2g85q3v0tdq56fnevx6xcxtcnhtsmcu64m',
-        dogecoin: 'D8vFz4p1L37jdg47HXKtSHA5uYLRD4HDh5',
-        litecoin: 'LQTpS3VaYTjCr4s9Y1t5zbeY26zevf7Fb3',
-        xrp: 'rLHzPsX6oXkzU2qL12kHCH8G8cnZv1rBJh',
-        solana: '7ZBQJehZK8E1bWHEhpw1yqNemV8WFB4KUeKGrHqXxem1',
-        cardano: 'addr1qxck58zg9yaqun2k6f5y8r9jzvl9ztx7v5nywqsx4xrh6g9vp7twsexu8nh0qj4h4w2k5xkt89f5tdd5qz3dyqh42xjqw3e0u6'
+        dogecoin: 'D8vFz4p1L37jdg47HXKtSHA5uYLRD4HDh5'
     };
 
-    // Show toast message
+    // Utility Functions
+    function formatCurrency(amount) {
+        return new Intl.NumberFormat('en-US', {
+            style: 'currency',
+            currency: 'USD'
+        }).format(amount);
+    }
+
     function showToast(message, type = 'success') {
-        const toast = document.getElementById('toast');
         toast.textContent = message;
-        toast.className = 'toast ' + type;
+        toast.className = `toast ${type}`;
         toast.style.display = 'block';
-        
         setTimeout(() => {
             toast.style.display = 'none';
         }, 3000);
     }
 
-    // Handle plan selection
-    document.querySelectorAll('.select-plan').forEach(button => {
-        button.addEventListener('click', () => {
-            paymentModal.style.display = 'block';
-        });
-    });
+    function validateAmount(value, minAmount, maxAmount) {
+        const numValue = parseFloat(value);
+        
+        if (isNaN(numValue)) {
+            return { isValid: false, message: 'Please enter a valid number' };
+        }
+        
+        if (numValue < minAmount) {
+            return { 
+                isValid: false, 
+                message: `Minimum investment amount is ${formatCurrency(minAmount)}` 
+            };
+        }
+        
+        if (maxAmount && numValue > maxAmount) {
+            return { 
+                isValid: false, 
+                message: `Maximum investment amount is ${formatCurrency(maxAmount)}` 
+            };
+        }
+        
+        return { isValid: true, message: '' };
+    }
 
-    // Handle crypto selection
-    document.querySelectorAll('.crypto-option').forEach(option => {
-        option.addEventListener('click', () => {
-            const cryptoType = option.dataset.crypto;
-            const walletAddress = walletAddresses[cryptoType];
-            
-            document.getElementById('walletAddress').value = walletAddress;
-            showToast(`${cryptoType.charAt(0).toUpperCase() + cryptoType.slice(1)} has been selected`);
-            
-            paymentModal.style.display = 'none';
-            walletModal.style.display = 'block';
-        });
-    });
+    // Event Handlers
+    function handlePlanSelection(event) {
+        const planCard = event.target.closest('.plan-card');
+        const minAmount = parseInt(planCard.dataset.min, 10);
+        const maxAmount = parseInt(planCard.dataset.max, 10);
 
-    // Copy wallet address
-    document.getElementById('copyAddress').addEventListener('click', () => {
-        const walletAddress = document.getElementById('walletAddress');
-        walletAddress.select();
+        // Reset and store plan limits
+        investmentAmountInput.value = '';
+        amountWarning.textContent = '';
+        investmentAmountInput.dataset.min = minAmount;
+        investmentAmountInput.dataset.max = maxAmount;
+
+        paymentModal.style.display = 'block';
+    }
+
+    function handleAmountInput() {
+        const value = investmentAmountInput.value;
+        const minAmount = parseInt(investmentAmountInput.dataset.min, 10);
+        const maxAmount = parseInt(investmentAmountInput.dataset.max, 10);
+
+        const validation = validateAmount(value, minAmount, maxAmount);
+        amountWarning.textContent = validation.message;
+        amountWarning.style.color = validation.isValid ? 'green' : 'red';
+    }
+
+    function handleCryptoSelection(event) {
+        const value = investmentAmountInput.value;
+        const minAmount = parseInt(investmentAmountInput.dataset.min, 10);
+        const maxAmount = parseInt(investmentAmountInput.dataset.max, 10);
+    
+        const validation = validateAmount(value, minAmount, maxAmount);
+        
+        if (!validation.isValid) {
+            amountWarning.textContent = validation.message;
+            showToast('Invalid investment amount. Please fix it before proceeding.', 'error');
+            return;
+        }
+    
+        const cryptoType = event.currentTarget.dataset.crypto;
+        const formattedAmount = formatCurrency(value);
+    
+        // Update the selected amount in the wallet modal
+        const selectedAmountElement = document.querySelector('.selected-amount');
+        selectedAmountElement.textContent = `Selected Amount: ${formattedAmount}`;
+    
+        // Update wallet address
+        walletAddressInput.value = walletAddresses[cryptoType];
+        showToast(`${cryptoType.charAt(0).toUpperCase() + cryptoType.slice(1)} selected`);
+    
+        // Hide payment modal and show wallet modal
+        paymentModal.style.display = 'none';
+        walletModal.style.display = 'block';
+    }
+    
+
+    function handleCopyAddress() {
+        walletAddressInput.select();
         document.execCommand('copy');
         showToast('Wallet address copied to clipboard');
-    });
+    }
 
-    // Handle proof upload
-    document.getElementById('submitProof').addEventListener('click', () => {
+    function handleProofSubmission() {
         const fileInput = document.getElementById('proofUpload');
         if (fileInput.files.length > 0) {
             showToast('Payment proof submitted successfully');
@@ -67,23 +129,70 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             showToast('Please select a proof image first', 'error');
         }
-    });
+    }
 
-    // Close modals
-    closeButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            paymentModal.style.display = 'none';
-            walletModal.style.display = 'none';
-        });
-    });
+    function handleModalClose() {
+        paymentModal.style.display = 'none';
+        walletModal.style.display = 'none';
+    }
 
-    // Close modal when clicking outside
-    window.addEventListener('click', (event) => {
-        if (event.target === paymentModal) {
-            paymentModal.style.display = 'none';
+    function handleOutsideClick(event) {
+        if (event.target === paymentModal || event.target === walletModal) {
+            event.target.style.display = 'none';
         }
-        if (event.target === walletModal) {
-            walletModal.style.display = 'none';
-        }
-    });
+    }
+
+    // Event Listeners
+    document.querySelectorAll('.select-plan')
+        .forEach(button => button.addEventListener('click', handlePlanSelection));
+
+    investmentAmountInput.addEventListener('input', handleAmountInput);
+
+    document.querySelectorAll('.crypto-option')
+        .forEach(option => option.addEventListener('click', handleCryptoSelection));
+
+    copyAddressButton.addEventListener('click', handleCopyAddress);
+    submitProofButton.addEventListener('click', handleProofSubmission);
+    
+    document.querySelectorAll('.close')
+        .forEach(button => button.addEventListener('click', handleModalClose));
+
+    window.addEventListener('click', handleOutsideClick);
 });
+
+
+//handle submission
+document.getElementById('submitProof').addEventListener('click', function () {
+    const investmentAmount = document.getElementById('investmentAmount').value;
+    const selectedCrypto = document.querySelector('.crypto-option.selected').getAttribute('data-crypto');
+    const selectedPlan = document.querySelector('.plan-card.selected').getAttribute('data-plan');
+    const proofFile = document.getElementById('proofUpload').files[0];
+
+    if (!investmentAmount || !selectedCrypto || !selectedPlan || !proofFile) {
+        alert('Please fill in all fields and upload proof.');
+        return;
+    }
+
+    const formData = new FormData();
+    formData.append('investmentAmount', investmentAmount);
+    formData.append('selectedCrypto', selectedCrypto);
+    formData.append('selectedPlan', selectedPlan);
+    formData.append('proofFile', proofFile);
+
+    fetch('process_investment.php', {
+        method: 'POST',
+        body: formData,
+    })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                alert('Investment submitted successfully!');
+            } else {
+                alert('Error: ' + data.message);
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+});
+
