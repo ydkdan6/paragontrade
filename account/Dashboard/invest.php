@@ -8,6 +8,20 @@ if (!isset($_SESSION['user_id'])) {
 }
 
 $username = $_SESSION['username'];
+
+// Display success message if exists
+if (isset($_SESSION['success_message'])) {
+    echo '<div class="alert alert-success">' . $_SESSION['success_message'] . '</div>';
+    // Clear the message
+    unset($_SESSION['success_message']);
+}
+
+// Display error message if exists
+if (isset($_SESSION['error_message'])) {
+    echo '<div class="alert alert-danger">' . $_SESSION['error_message'] . '</div>';
+    // Clear the message
+    unset($_SESSION['error_message']);
+}
 ?>
 
 <!DOCTYPE html>
@@ -124,14 +138,25 @@ $username = $_SESSION['username'];
                 </div>
 
                 <!-- Payment Modal -->
+                <form id="investmentForm" action="process-invest.php" method="POST" enctype="multipart/form-data">
             <div id="paymentModal" class="modal">
                 <div class="modal-content">
                     <span class="close">&times;</span>
                     <h2>Select Payment Method</h2>
                     <div class="amount-input">
+                    <label for="plan_name">Selected Plan Name:</label>
+                            <input type="text" id="planNameInput" name="plan" placeholder="Enter plan name" style="height: 29px; width: 280px; padding-left: 5px; border-radius: 10px;">
+                                    <br/>
+                                    <br/>
                             <label for="investmentAmount">Investment Amount:</label>
                             <input type="number" id="investmentAmount"  name="investmentAmount" placeholder="Enter amount" style="height: 29px; width: 280px; padding-left: 5px; border-radius: 10px;">
                             <p id="amountWarning" class="" style="color: red;"></p>
+                            <br/>
+                            <br/>
+                            <label for="payment_method">Selected Payment Method:</label>
+                            <input type="text"  name="paymentMethod" placeholder="Enter Payment method" style="height: 29px; width: 280px; padding-left: 5px; border-radius: 10px;">
+                                    <br/>
+                                    <br/>
                         </div>
                     <div class="crypto-options">
                         <div class="crypto-option" data-crypto="bitcoin">
@@ -167,7 +192,10 @@ $username = $_SESSION['username'];
                     <div class="wallet-details">
                         <p>Send payment to the following wallet address:</p>
 
+                        <p id="planDisplay"></p>
+
                         <p class="selected-amount"></p>
+        
                         <div class="wallet-address">
                             <input type="text" id="walletAddress" readonly>
                             <button class="btn btn-secondary" id="copyAddress">
@@ -176,12 +204,13 @@ $username = $_SESSION['username'];
                         </div>
                         <div class="proof-upload">
                             <h3>Upload Payment Proof</h3>
-                            <input type="file" id="proofUpload" name="paymentProof" accept="image/*">
+                            <input type="file" id="proofUpload" name="proof_of_payment" accept="image/*">
                             <button class="btn btn-primary" id="submitProof">Submit Proof</button>
                         </div>
                     </div>
                 </div>
             </div>
+</form>
 
                 <!-- Toast Notification -->
                 <div id="toast" class="toast"></div>

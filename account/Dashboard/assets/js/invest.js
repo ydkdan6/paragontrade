@@ -9,6 +9,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const submitProofButton = document.getElementById('submitProof');
     const selectedAmount = document.getElementsByClassName("selected-amount");
     const toast = document.getElementById('toast');
+    const planDisplay = document.getElementById('planDisplay');
+    const planNameInput = document.getElementById('planNameInput');
 
     // Constants
     const walletAddresses = {
@@ -33,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
         toast.style.display = 'block';
         setTimeout(() => {
             toast.style.display = 'none';
-        }, 3000);
+        }, 9000);
     }
 
     function validateAmount(value, minAmount, maxAmount) {
@@ -87,8 +89,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function handleCryptoSelection(event) {
         const value = investmentAmountInput.value;
+        const planName = planNameInput.value;
         const minAmount = parseInt(investmentAmountInput.dataset.min, 10);
         const maxAmount = parseInt(investmentAmountInput.dataset.max, 10);
+
+        if (!planName) {
+            alert('Please fill out the plan name and investment amount.');
+            return;
+        }
     
         const validation = validateAmount(value, minAmount, maxAmount);
         
@@ -104,6 +112,8 @@ document.addEventListener('DOMContentLoaded', () => {
         // Update the selected amount in the wallet modal
         const selectedAmountElement = document.querySelector('.selected-amount');
         selectedAmountElement.textContent = `Selected Amount: ${formattedAmount}`;
+
+        planDisplay.textContent = `Selected Plan: ${planName} Plan`;
     
         // Update wallet address
         walletAddressInput.value = walletAddresses[cryptoType];
@@ -195,4 +205,6 @@ document.getElementById('submitProof').addEventListener('click', function () {
             console.error('Error:', error);
         });
 });
+
+
 
