@@ -27,6 +27,7 @@
                     <div class="bg-white shadow card login-page roundedd border-1">
                         <div class="card-body">
                             <h4 class="text-center card-title">User Login</h4>
+<<<<<<< HEAD:account/login.php
                             <form method="POST" action="../account/login-handler.php" class="mt-4 login-form">
                             <!-- General error message -->
                 <?php if (!empty($errors['general'])): ?>
@@ -35,11 +36,15 @@
                     </div>
                 <?php endif; ?>
 
+=======
+                            <form method="post" action="authentication_system.php" class="mt-4 login-form">
+>>>>>>> f206c90ebc37c37ff5a680fe217af4bbee43a627:account/login.html
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div class="form-group">
                                             <label>Your Email <span class="text-danger">*</span></label>
                                             <div class="position-relative">
+<<<<<<< HEAD:account/login.php
                                                 <i class="fea icon-sm icons"></i>
                                                 <input type="email" class="pl-5 form-control" name="email"
                                                     value="<?php echo htmlspecialchars($formData['email'] ?? ''); ?>"
@@ -51,10 +56,17 @@
                                         </div>
                                     </div>
 
+=======
+                                                <input type="email" class="pl-5 form-control" name="email" id="email" placeholder="name@example.com" required>
+                                            </div>
+                                        </div>
+                                    </div>
+>>>>>>> f206c90ebc37c37ff5a680fe217af4bbee43a627:account/login.html
                                     <div class="col-lg-12">
                                         <div class="form-group">
                                             <label>Password <span class="text-danger">*</span></label>
                                             <div class="position-relative">
+<<<<<<< HEAD:account/login.php
                                                 <i class="fea icon-sm icons"></i>
                                                 <input type="password" class="pl-5 form-control" name="password"
                                                     id="password" placeholder="Enter Password" required>
@@ -92,9 +104,18 @@
                                     <div class="text-center col-12">
                                         <p class="mt-4 mb-0"><small class="mr-2 text-dark">&copy; Copyright 2024 &nbsp;
                                                 Paragontradeinvestment &nbsp; All Rights Reserved.</small></p>
+=======
+                                                <input type="password" class="pl-5 form-control" name="password" id="password" placeholder="Enter Password" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mb-0 col-lg-12">
+                                        <button class="btn btn-primary btn-block pad" name="login" type="submit">Sign in</button>
+>>>>>>> f206c90ebc37c37ff5a680fe217af4bbee43a627:account/login.html
                                     </div>
                                 </div>
                             </form>
+                            
                         </div>
                     </div>
                 </div>
