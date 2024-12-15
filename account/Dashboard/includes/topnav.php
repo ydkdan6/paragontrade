@@ -6,8 +6,8 @@
                     <h1>Paragontradeinvestment</h1>
                 </div>
                 <div class="nav-right">
-                    <button class="btn btn-primary">Fund your Account</button>
-                    <button class="btn btn-secondary">Withdraw Funds</button>
+                    <button class="btn btn-primary" title="Coming soon!">Fund your Account</button>
+                    <button class="btn btn-secondary" title="Coming soon!">Withdraw Funds</button>
                     <div class="theme-toggle">
                         <input type="checkbox" id="theme-switch">
                         <label for="theme-switch"></label>
