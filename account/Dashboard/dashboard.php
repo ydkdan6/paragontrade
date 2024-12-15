@@ -40,6 +40,7 @@ $isFirstVisit = !isset($_SESSION['dashboard_tour_completed']);
             padding: 20px;
             border-radius: 10px;
             width: 80%;
+            height: 80%;
             max-width: 500px;
             text-align: center;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
@@ -86,13 +87,13 @@ $isFirstVisit = !isset($_SESSION['dashboard_tour_completed']);
                     <h1>Paragontradeinvestment</h1>
                 </div>
                 <div class="nav-right">
-                    <button class="btn btn-primary" data-intro="Here you can add funds to your trading account and start investing" data-step="2">Fund your Account</button>
-                    <button class="btn btn-secondary" data-intro="Withdraw your earnings and profits from your account" data-step="3">Withdraw Funds</button>
+                    <button class="btn btn-primary" data-intro="Here you can add funds to your trading account and start investing(Coming-Soon!)" data-step="2">Fund your Account</button>
+                    <button class="btn btn-secondary" data-intro="Withdraw your earnings and profits from your account. (Coming-Soon!)" data-step="3">Withdraw Funds</button>
                     <div class="theme-toggle">
                         <input type="checkbox" id="theme-switch">
                         <label for="theme-switch"></label>
                     </div>
-                    <div class="kyc-status" data-intro="Complete your Know Your Customer (KYC) verification" data-step="4">KYC</div>
+                    <div class="kyc-status" data-intro="Complete your Know Your Customer (KYC) verification. (Coming-Soon!)" data-step="4">KYC</div>
                     <div class="user-profile">
                         <i class="fas fa-user"></i>
                     </div>
