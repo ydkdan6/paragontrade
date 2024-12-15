@@ -37,10 +37,9 @@ $isFirstVisit = !isset($_SESSION['dashboard_tour_completed']);
         .modal-content {
             background-color: #fefefe;
             margin: 15% auto;
-            padding: 20px;
+            padding: 50px;
             border-radius: 10px;
             width: 80%;
-            height: 80%;
             max-width: 500px;
             text-align: center;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
@@ -75,7 +74,7 @@ $isFirstVisit = !isset($_SESSION['dashboard_tour_completed']);
                 <span class="close-tour">&times;</span>
                 <h2>Welcome to Your Paragontradeinvestment Dashboard!</h2>
                 <p>Let me guide you through your new dashboard and its key features.</p>
-                <button id="start-dashboard-tour" class="btn btn-primary">Start Dashboard Tour</button>
+                <button id="start-dashboard-tour" class="btn btn-primary" style="margin-top: 20px;">Start Dashboard Tour</button>
             </div>
         </div>
         <?php endif; ?>
