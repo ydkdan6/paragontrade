@@ -83,7 +83,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['success_message'] = "Investment recorded successfully!";
         
         // Redirect to invest.php
-        header('Location: invest.php');
+        header('Location: invest.php?success=true');
         exit();
 
     } catch (Exception $e) {

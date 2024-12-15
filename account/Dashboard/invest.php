@@ -9,17 +9,35 @@ if (!isset($_SESSION['user_id'])) {
 
 $username = $_SESSION['username'];
 
-// Display success message if exists
+// Handle success message from session (as a backup)
 if (isset($_SESSION['success_message'])) {
-    echo '<div class="alert alert-success">' . $_SESSION['success_message'] . '</div>';
+    echo "<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        toastr.success('" . $_SESSION['success_message'] . "', 'Success', {
+            closeButton: true,
+            progressBar: true,
+            positionClass: 'toast-top-right',
+            timeOut: 5000
+        });
+    });
+    </script>";
     // Clear the message
     unset($_SESSION['success_message']);
 }
 
-// Display error message if exists
+// Handle error message
 if (isset($_SESSION['error_message'])) {
-    echo '<div class="alert alert-danger">' . $_SESSION['error_message'] . '</div>';
-    // Clear the message
+    echo "<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        toastr.error('" . $_SESSION['error_message'] . "', 'Error', {
+            closeButton: true,
+            progressBar: true,
+            positionClass: 'toast-top-right',
+            timeOut: 5000
+        });
+    });
+    </script>";
+    // Clear the error message
     unset($_SESSION['error_message']);
 }
 ?>
@@ -31,6 +49,8 @@ if (isset($_SESSION['error_message'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Invest - Paragontradeinvestment</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/invest.css" />
 </head>
@@ -217,6 +237,101 @@ if (isset($_SESSION['error_message'])) {
             </div>
         </div>
     </div>
+
+    <!-- Success Modal -->
+<div id="successModal" class="modal-con">
+    <div class="modal-items">
+        <span class="close-mod">&times;</span>
+        <h2>Success!</h2>
+        <p>Your investment has been placed successfully.</p>
+        <button class="btn btn-primary close-modal-btn">OK</button>
+    </div>
+</div>
+
+<style>
+    /* Modal Styles */
+.modal-con {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-items {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal-items h2 {
+    color: #4CAF50; /* Success color */
+    margin-bottom: 15px;
+}
+
+.modal-items p {
+    color: #555;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.modal-items .btn {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.modal-items .btn:hover {
+    background-color: #45a049;
+}
+
+.close-mod {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+</style>
+
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Check for success parameter in URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const isSuccess = urlParams.get('success');
+
+        if (isSuccess === 'true') {
+            // Show the success modal
+            const successModal = document.getElementById('successModal');
+            successModal.style.display = 'flex';
+
+            // Close modal on button click
+            document.querySelectorAll('.close-modal, .close-modal-btn').forEach((el) => {
+                el.addEventListener('click', function () {
+                    successModal.style.display = 'none';
+                });
+            });
+
+            // Remove success parameter from URL
+            history.replaceState(null, '', window.location.pathname);
+        }
+    });
+</script>
 
     <script src="assets/js/side-main.js"></script>
     <!-- <script src="assets/js/main.js"></script> -->
