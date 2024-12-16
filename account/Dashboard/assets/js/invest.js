@@ -14,11 +14,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Constants
     const walletAddresses = {
-        bitcoin: '1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa',
-        ethereum: '0x742d35Cc6634C0532925a3b844Bc454e4438f44e',
-        usdt: 'TXn6sEjrwBXYqvQayYqYh7zVjsYyUnDPFi',
-        bnb: 'bnb1jxfh2g85q3v0tdq56fnevx6xcxtcnhtsmcu64m',
-        dogecoin: 'D8vFz4p1L37jdg47HXKtSHA5uYLRD4HDh5'
+        bitcoin: 'bc1qft4xw2crfm3ajlfemjd20edzfmsn4mlj6z4mvj',
+        ethereum: '0xd7F756Aa888F4fD820AE53B82e596DA2314B7d2d',
+        usdt: '0xd7F756Aa888F4fD820AE53B82e596DA2314B7d2d',
+        bnb: '0xd7F756Aa888F4fD820AE53B82e596DA2314B7d2d',
+        dogecoin: 'DRyHfQ4oUJeH6YwTdujme797iUve5L3cCV',
+        tron: 'TNd4vf36epoz8BXHbjzxQoVnbSFegKvTFA',
+        solana: '9iAvVRQ3PXTbtZNSwFKqQiTEaVT3ayLq5ADG5ZEnrcKE',
+        litecoin: 'ltc1ql6xrdc4vj5jwvrmv8zsc60nu7g7sleq4znx93m',
+        ripple: 'rU5R9E2sXcc6xEDyW6KLGZxhuXCFDvWyLY'
     };
 
     // Utility Functions
@@ -125,10 +129,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
 
-    function handleCopyAddress() {
+    function handleCopyAddress(event) {
+        // Prevent default button behavior
+        event.preventDefault();
+        
         walletAddressInput.select();
-        document.execCommand('copy');
-        showToast('Wallet address copied to clipboard');
+        navigator.clipboard.writeText(walletAddressInput.value)
+            .then(() => {
+                showToast('Wallet address copied to clipboard');
+            })
+            .catch(err => {
+                console.error('Error copying address:', err);
+                showToast('Failed to copy address', 'error');
+            });
     }
 
     function handleProofSubmission() {

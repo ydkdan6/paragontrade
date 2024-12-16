@@ -26,18 +26,25 @@ CREATE TABLE InvestmentPlans (
 CREATE TABLE Transactions (
     id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT NOT NULL,
-    type ENUM('Investment', 'Withdrawal', 'Funding') NOT NULL,
-    amount DECIMAL(10, 2) NOT NULL,
+    type ENUM('Investment', 'Withdrawal', 'Funding', 'Buy', 'Sell') NOT NULL, -- Added 'Buy' and 'Sell'
+    currency_from VARCHAR(10), -- Currency being traded from
+    currency_to VARCHAR(10), -- Currency being traded to
+    amount DECIMAL(16, 8) NOT NULL, -- Original trade amount
+    result_amount DECIMAL(16, 8), -- Result of the trade (after conversion)
+    rate DECIMAL(16, 8), -- Conversion rate
     status ENUM('Pending', 'Completed') DEFAULT 'Pending',
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
+
 CREATE TABLE Wallets (
     id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT NOT NULL,
-    balance DECIMAL(10, 2) DEFAULT 0.00,
+    currency VARCHAR(10) NOT NULL,
+    balance DECIMAL(16, 8) DEFAULT 0.00000000,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
+
 
 
 -- Admins Table
@@ -65,6 +72,10 @@ CREATE TABLE password_resets (
     expiration DATETIME NOT NULL,
     FOREIGN KEY (user_id) REFERENCES Users(user_id) ON DELETE CASCADE
 );
+
+UPDATE Wallets
+SET balance = balance + ?
+WHERE user_id = ?;
 
 
 -- Indexes for optimization

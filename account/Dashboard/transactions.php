@@ -1,5 +1,5 @@
 <?php 
-include 'includes/header.php'; 
+require_once 'includes/session.php';
 include '../db_connect.php'; // Ensure database connection
 
 // Fetch user transactions
@@ -39,7 +39,7 @@ $username = $_SESSION['username'];
         <div class="main-content">
             <?php include 'includes/topnav.php'; ?>
             
-            <div class="transactions-content">
+            <div class="transactions-content" style="padding-left: 10px;">
                 <div class="section-header">
                     <h2>Investment Transactions</h2>
                     <p>View all your investment activities</p>

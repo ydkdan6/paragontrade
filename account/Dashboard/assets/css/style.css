@@ -29,7 +29,10 @@
   }
   
   body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
     background-color: var(--background-color);
     color: var(--text-color);
     transition: all 0.3s ease;

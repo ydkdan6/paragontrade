@@ -1,5 +1,5 @@
 <?php
-session_start();
+require_once 'includes/session.php';
 
 // Check if user is logged in
 if (!isset($_SESSION['user_id'])) {
@@ -53,6 +53,19 @@ if (isset($_SESSION['error_message'])) {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/invest.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<style>
+    body {
+    font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: all 0.3s ease;
+  }
+</style>
 </head>
 <body>
     <div class="app-container">
@@ -158,8 +171,8 @@ if (isset($_SESSION['error_message'])) {
                 </div>
 
                 <!-- Payment Modal -->
-                <form id="investmentForm" action="process-invest.php" method="POST" enctype="multipart/form-data">
-            <div id="paymentModal" class="modal">
+                <form id="investmentForm" action="process-invest.php" method="POST" enctype="multipart/form-data" >
+            <div id="paymentModal" class="modal" style="overflow-y: scroll;">
                 <div class="modal-content">
                     <span class="close">&times;</span>
                     <h2>Select Payment Method</h2>
@@ -194,6 +207,22 @@ if (isset($_SESSION['error_message'])) {
                         <div class="crypto-option" data-crypto="bnb">
                             <img src="https://cryptologos.cc/logos/binance-coin-bnb-logo.png" alt="BNB">
                             <span>BNB</span>
+                        </div>
+                        <div class="crypto-option" data-crypto="solana">
+                            <img src="https://cryptologos.cc/logos/solana-sol-logo.png" alt="SOLANA">
+                            <span>SOLANA</span>
+                        </div>
+                        <div class="crypto-option" data-crypto="litecoin">
+                            <img src="https://cryptologos.cc/logos/litecoin-ltc-logo.png" alt="LITECOIN">
+                            <span>LITECOIN</span>
+                        </div>
+                        <div class="crypto-option" data-crypto="ripple">
+                            <img src="https://cryptologos.cc/logos/xrp-xrp-logo.png" alt="RIPPLE">
+                            <span>RIPPLE</span>
+                        </div>
+                        <div class="crypto-option" data-crypto="tron">
+                            <img src="https://cryptologos.cc/logos/tron-trx-logo.png" alt="TRON">
+                            <span>TRON</span>
                         </div>
                         <div class="crypto-option" data-crypto="dogecoin">
                             <img src="https://cryptologos.cc/logos/dogecoin-doge-logo.png" alt="Dogecoin">

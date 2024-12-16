@@ -1,5 +1,5 @@
 <?php
-session_start();
+require_once 'includes/session.php';
 
 // Check if user is logged in
 if (!isset($_SESSION['user_id'])) {
@@ -8,12 +8,14 @@ if (!isset($_SESSION['user_id'])) {
 }
 
 $username = $_SESSION['username'];
+
 // Check if this is the user's first login
 $isFirstVisit = !isset($_SESSION['dashboard_tour_completed']);
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,7 +23,19 @@ $isFirstVisit = !isset($_SESSION['dashboard_tour_completed']);
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intro.js@7.2.0/minified/introjs.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <style>
+        body {
+            font-family: "Montserrat", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            transition: all 0.3s ease;
+        }
+
         .modal {
             display: none;
             position: fixed;
@@ -31,7 +45,7 @@ $isFirstVisit = !isset($_SESSION['dashboard_tour_completed']);
             width: 100%;
             height: 100%;
             overflow: auto;
-            background-color: rgba(0,0,0,0.4);
+            background-color: rgba(0, 0, 0, 0.4);
         }
 
         .modal-content {
@@ -42,7 +56,7 @@ $isFirstVisit = !isset($_SESSION['dashboard_tour_completed']);
             width: 80%;
             max-width: 500px;
             text-align: center;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         .close-tour {
@@ -69,14 +83,14 @@ $isFirstVisit = !isset($_SESSION['dashboard_tour_completed']);
 
         <!-- Dashboard Tour Modal -->
         <?php if ($isFirstVisit): ?>
-        <div id="dashboard-tour-modal" class="modal">
-            <div class="modal-content">
-                <span class="close-tour">&times;</span>
-                <h2>Welcome to Your Paragontradeinvestment Dashboard!</h2>
-                <p>Let me guide you through your new dashboard and its key features.</p>
-                <button id="start-dashboard-tour" class="btn btn-primary" style="margin-top: 20px;">Start Dashboard Tour</button>
+            <div id="dashboard-tour-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close-tour">&times;</span>
+                    <h2>Welcome to Your Paragontradeinvestment Dashboard!</h2>
+                    <p>Let me guide you through your new dashboard and its key features.</p>
+                    <button id="start-dashboard-tour" class="btn btn-primary" style="margin-top: 20px;">Start Dashboard Tour</button>
+                </div>
             </div>
-        </div>
         <?php endif; ?>
 
         <div class="main-content">
@@ -147,13 +161,14 @@ $isFirstVisit = !isset($_SESSION['dashboard_tour_completed']);
                     </div>
                 </div>
 
-                <div class="trading-chart" data-intro="Real-time cryptocurrency market data and trends" data-step="10">
+                <div class="trading-chart" data-intro="Real-time cryptocurrency market data and trends" data-step="10" style="margin-bottom: 10px;">
                     <h3>Cryptocurrencies Trading Chart</h3>
                     <div id="chart-container">
                         <div class="tradingview-widget-container" style="width: 100%; height: 523px;">
                             <iframe
                                 src="https://www.tradingview.com/embed-widget/crypto-mkt-screener/?locale=en#%7B%22width%22%3A1100%2C%22height%22%3A523%2C%22colorTheme%22%3A%22light%22%2C%22showSymbolLogo%22%3Atrue%2C%22showFloatingTooltip%22%3Atrue%2C%22width%22%3A1100%2C%22height%22%3A523%2C%22defaultColumn%22%3A%22overview%22%2C%22market%22%3A%22crypto%22%2C%22enableScrolling%22%3Atrue%7D"
                                 style="user-select: none; box-sizing: border-box; display: block; height: calc(100% - 32px); width: 100%;"
+
                                 frameborder="0">
                             </iframe>
                         </div>
@@ -164,7 +179,7 @@ $isFirstVisit = !isset($_SESSION['dashboard_tour_completed']);
                     <h3>Personal Trading Chart</h3>
                     <div id="chart-container">
                         <div class="tradingview-widget-container" style="width: 100%; height: 523px;">
-                            <iframe 
+                            <iframe
                                 src="https://www.tradingview-widget.com/embed-widget/screener/?locale=en#%7B%22width%22%3A1100%2C%22height%22%3A523%2C%22defaultColumn%22%3A%22overview%22%2C%22defaultScreen%22%3A%22general%22%2C%22market%22%3A%22forex%22%2C%22showToolbar%22%3Atrue%2C%22colorTheme%22%3A%22light%22%2C%22enableScrolling%22%3Atrue%2C%22utm_source%22%3A%22www.tradingview.com%22%2C%22utm_medium%22%3A%22widget_new%22%2C%22utm_campaign%22%3A%22forexscreener%22%2C%22page-uri%22%3A%22www.tradingview.com%2Fwidget%2Fscreener%2F%22%7D"
                                 style="user-select: none; box-sizing: border-box; display: block; height: calc(100% - 32px); width: 100%;"
                                 frameborder="0">
@@ -184,38 +199,39 @@ $isFirstVisit = !isset($_SESSION['dashboard_tour_completed']);
     <script src="assets/js/theme.js"></script>
 
     <script>
-    <?php if ($isFirstVisit): ?>
-    document.addEventListener('DOMContentLoaded', function() {
-        const modal = document.getElementById('dashboard-tour-modal');
-        const closeTour = document.querySelector('.close-tour');
-        const startTourBtn = document.getElementById('start-dashboard-tour');
+        <?php if ($isFirstVisit): ?>
+            document.addEventListener('DOMContentLoaded', function() {
+                const modal = document.getElementById('dashboard-tour-modal');
+                const closeTour = document.querySelector('.close-tour');
+                const startTourBtn = document.getElementById('start-dashboard-tour');
 
-        // Show modal on first visit
-        modal.style.display = 'block';
+                // Show modal on first visit
+                modal.style.display = 'block';
 
-        // Close modal events
-        closeTour.onclick = function() {
-            modal.style.display = 'none';
-            // Mark tour as completed
-            fetch('mark_tour_completed.php');
-        }
+                // Close modal events
+                closeTour.onclick = function() {
+                    modal.style.display = 'none';
+                    // Mark tour as completed
+                    fetch('mark_tour_completed.php');
+                }
 
-        // Start tour button
-        startTourBtn.onclick = function() {
-            modal.style.display = 'none';
-            introJs().setOptions({
-                prevLabel: 'Previous',
-                nextLabel: 'Next',
-                doneLabel: 'Finish Tour',
-                showStepNumbers: true,
-                exitOnOverlayClick: false,
-                showProgress: true
-            }).start();
-            // Mark tour as completed
-            fetch('mark_tour_completed.php');
-        }
-    });
-    <?php endif; ?>
+                // Start tour button
+                startTourBtn.onclick = function() {
+                    modal.style.display = 'none';
+                    introJs().setOptions({
+                        prevLabel: 'Previous',
+                        nextLabel: 'Next',
+                        doneLabel: 'Finish Tour',
+                        showStepNumbers: true,
+                        exitOnOverlayClick: false,
+                        showProgress: true
+                    }).start();
+                    // Mark tour as completed
+                    fetch('mark_tour_completed.php');
+                }
+            });
+        <?php endif; ?>
     </script>
 </body>
+
 </html>

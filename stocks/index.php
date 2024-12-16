@@ -1,3 +1,20 @@
+<?php
+
+ require_once './account/Dashboard/includes/session.php';
+
+ $isLoggedIn = isset($_SESSION['user_id']);
+
+ $userEmail = isset($_SESSION['user_email']) ? $_SESSION['user_email'] : null;
+
+// If the user is logged in and email is available, get the Gravatar
+
+$username = $_SESSION['username']; 
+
+$avatarUrl = './assets/icon.png';
+
+ ?>
+
+
 <!DOCTYPE html>
 <html class="html" lang="en-US">
 

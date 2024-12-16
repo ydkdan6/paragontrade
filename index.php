@@ -790,11 +790,7 @@
 																				<li id="menu-item-678"
 																					class="menu-item menu-item-type-custom menu-item-object-custom menu-item-678 nav-item elementskit-mobile-builder-content"
 																					data-vertical-menu=750px><a
-<<<<<<< HEAD
 																						href="./account/login.php"
-=======
-																						href="./account/login.html"
->>>>>>> f206c90ebc37c37ff5a680fe217af4bbee43a627
 																						class=" dropdown-item">Login</a>
 																				<li id="menu-item-679"
 																					class="menu-item menu-item-type-custom menu-item-object-custom menu-item-679 nav-item elementskit-mobile-builder-content"
@@ -877,11 +873,7 @@
 														<div class="elementor-widget-container">
 															<div class="elementor-button-wrapper">
 																<a class="elementor-button elementor-button-link elementor-size-sm"
-<<<<<<< HEAD
 																	href="./account/login.php">
-=======
-																	href="./account/login.html">
->>>>>>> f206c90ebc37c37ff5a680fe217af4bbee43a627
 																	<span class="elementor-button-content-wrapper">
 																		<span class="elementor-button-text">Login</span>
 																	</span>
@@ -1354,7 +1346,7 @@
 																				height="600"
 																				src="wp-content/uploads/2024/06/newclient12.png"
 																				class="" alt=""
-																				srcset="https://ParagonTradeInvestment.com/wp-content/uploads/2024/06/newclient12.png 1000w, https://ParagonTradeInvestment.com/wp-content/uploads/2024/06/newclient12-300x180.png 300w, https://ParagonTradeInvestment.com/wp-content/uploads/2024/06/newclient12-768x461.png 768w"
+																				srcset="https://tscassetpro.com/wp-content/uploads/2024/06/newclient12.png 1000w, https://ParagonTradeInvestment.com/wp-content/uploads/2024/06/newclient12-300x180.png 300w, https://ParagonTradeInvestment.com/wp-content/uploads/2024/06/newclient12-768x461.png 768w"
 																				sizes="(max-width: 1000px) 100vw, 1000px" />
 																		</div>
 
@@ -1373,7 +1365,7 @@
 																				width="1000" height="600"
 																				src="wp-content/uploads/2024/06/newclient22.png"
 																				class="" alt=""
-																				srcset="https://ParagonTradeInvestment.com/wp-content/uploads/2024/06/newclient22.png 1000w, https://ParagonTradeInvestment.com/wp-content/uploads/2024/06/newclient22-300x180.png 300w, https://ParagonTradeInvestment.com/wp-content/uploads/2024/06/newclient22-768x461.png 768w"
+																				srcset="https://tscassetpro.com/wp-content/uploads/2024/06/newclient22.png 1000w, https://ParagonTradeInvestment.com/wp-content/uploads/2024/06/newclient22-300x180.png 300w, https://ParagonTradeInvestment.com/wp-content/uploads/2024/06/newclient22-768x461.png 768w"
 																				sizes="(max-width: 1000px) 100vw, 1000px" />
 																		</div>
 
@@ -1392,7 +1384,7 @@
 																				width="1000" height="600"
 																				src="wp-content/uploads/2024/06/newclient32.png"
 																				class="" alt=""
-																				srcset="https://ParagonTradeInvestment.com/wp-content/uploads/2024/06/newclient32.png 1000w, https://ParagonTradeInvestment.com/wp-content/uploads/2024/06/newclient32-300x180.png 300w, https://ParagonTradeInvestment.com/wp-content/uploads/2024/06/newclient32-768x461.png 768w"
+																				srcset="https://tscassetpro.com/wp-content/uploads/2024/06/newclient32.png 1000w, https://ParagonTradeInvestment.com/wp-content/uploads/2024/06/newclient32-300x180.png 300w, https://ParagonTradeInvestment.com/wp-content/uploads/2024/06/newclient32-768x461.png 768w"
 																				sizes="(max-width: 1000px) 100vw, 1000px" />
 																		</div>
 
@@ -1411,7 +1403,7 @@
 																				width="1000" height="600"
 																				src="wp-content/uploads/2024/06/newclient42.png"
 																				class="" alt=""
-																				srcset="https://ParagonTradeInvestment.com/wp-content/uploads/2024/06/newclient42.png 1000w, https://ParagonTradeInvestment.com/wp-content/uploads/2024/06/newclient42-300x180.png 300w, https://ParagonTradeInvestment.com/wp-content/uploads/2024/06/newclient42-768x461.png 768w"
+																				srcset="https://tscassetpro.com/wp-content/uploads/2024/06/newclient42.png 1000w, https://ParagonTradeInvestment.com/wp-content/uploads/2024/06/newclient42-300x180.png 300w, https://ParagonTradeInvestment.com/wp-content/uploads/2024/06/newclient42-768x461.png 768w"
 																				sizes="(max-width: 1000px) 100vw, 1000px" />
 																		</div>
 
@@ -1430,7 +1422,7 @@
 																				width="1000" height="600"
 																				src="wp-content/uploads/2024/06/newclient52.png"
 																				class="" alt=""
-																				srcset="https://ParagonTradeInvestment.com/wp-content/uploads/2024/06/newclient52.png 1000w, https://ParagonTradeInvestment.com/wp-content/uploads/2024/06/newclient52-300x180.png 300w, https://ParagonTradeInvestment.com/wp-content/uploads/2024/06/newclient52-768x461.png 768w"
+																				srcset="https://tscassetpro.com/wp-content/uploads/2024/06/newclient52.png 1000w, https://ParagonTradeInvestment.com/wp-content/uploads/2024/06/newclient52-300x180.png 300w, https://ParagonTradeInvestment.com/wp-content/uploads/2024/06/newclient52-768x461.png 768w"
 																				sizes="(max-width: 1000px) 100vw, 1000px" />
 																		</div>
 
@@ -1449,7 +1441,7 @@
 																				width="1000" height="600"
 																				src="wp-content/uploads/2024/06/newclient62.png"
 																				class="" alt=""
-																				srcset="https://ParagonTradeInvestment.com/wp-content/uploads/2024/06/newclient62.png 1000w, https://ParagonTradeInvestment.com/wp-content/uploads/2024/06/newclient62-300x180.png 300w, https://ParagonTradeInvestment.com/wp-content/uploads/2024/06/newclient62-768x461.png 768w"
+																				srcset="https://tscassetpro.com/wp-content/uploads/2024/06/newclient62.png 1000w, https://ParagonTradeInvestment.com/wp-content/uploads/2024/06/newclient62-300x180.png 300w, https://ParagonTradeInvestment.com/wp-content/uploads/2024/06/newclient62-768x461.png 768w"
 																				sizes="(max-width: 1000px) 100vw, 1000px" />
 																		</div>
 
@@ -1468,7 +1460,7 @@
 																				width="1000" height="600"
 																				src="wp-content/uploads/2024/06/newclient72.png"
 																				class="" alt=""
-																				srcset="https://ParagonTradeInvestment.com/wp-content/uploads/2024/06/newclient72.png 1000w, https://ParagonTradeInvestment.com/wp-content/uploads/2024/06/newclient72-300x180.png 300w, https://ParagonTradeInvestment.com/wp-content/uploads/2024/06/newclient72-768x461.png 768w"
+																				srcset="https://tscassetpro.com/wp-content/uploads/2024/06/newclient72.png 1000w, https://ParagonTradeInvestment.com/wp-content/uploads/2024/06/newclient72-300x180.png 300w, https://ParagonTradeInvestment.com/wp-content/uploads/2024/06/newclient72-768x461.png 768w"
 																				sizes="(max-width: 1000px) 100vw, 1000px" />
 																		</div>
 
@@ -2689,7 +2681,7 @@
 																src="wp-content/uploads/2024/06/client1.png"
 																class="elementor-animation-float attachment-large size-large wp-image-118"
 																alt=""
-																srcset="https://ParagonTradeInvestment.com/wp-content/uploads/2024/06/client1.png 1000w, https://ParagonTradeInvestment.com/wp-content/uploads/2024/06/client1-300x180.png 300w, https://ParagonTradeInvestment.com/wp-content/uploads/2024/06/client1-768x461.png 768w"
+																srcset="https://tscassetpro.com/wp-content/uploads/2024/06/client1.png 1000w, https://ParagonTradeInvestment.com/wp-content/uploads/2024/06/client1-300x180.png 300w, https://ParagonTradeInvestment.com/wp-content/uploads/2024/06/client1-768x461.png 768w"
 																sizes="(max-width: 1000px) 100vw, 1000px" />
 														</div>
 													</div>
@@ -2708,7 +2700,7 @@
 																src="wp-content/uploads/2024/06/client2.png"
 																class="elementor-animation-float attachment-large size-large wp-image-119"
 																alt=""
-																srcset="https://ParagonTradeInvestment.com/wp-content/uploads/2024/06/client2.png 1000w, https://ParagonTradeInvestment.com/wp-content/uploads/2024/06/client2-300x180.png 300w, https://ParagonTradeInvestment.com/wp-content/uploads/2024/06/client2-768x461.png 768w"
+																srcset="https://tscassetpro.com/wp-content/uploads/2024/06/client2.png 1000w, https://ParagonTradeInvestment.com/wp-content/uploads/2024/06/client2-300x180.png 300w, https://ParagonTradeInvestment.com/wp-content/uploads/2024/06/client2-768x461.png 768w"
 																sizes="(max-width: 1000px) 100vw, 1000px" />
 														</div>
 													</div>
@@ -2733,7 +2725,7 @@
 																src="wp-content/uploads/2024/06/client7.png"
 																class="elementor-animation-float attachment-large size-large wp-image-120"
 																alt=""
-																srcset="https://ParagonTradeInvestment.com/wp-content/uploads/2024/06/client7.png 1000w, https://ParagonTradeInvestment.com/wp-content/uploads/2024/06/client7-300x180.png 300w, https://ParagonTradeInvestment.com/wp-content/uploads/2024/06/client7-768x461.png 768w"
+																srcset="https://tscassetpro.com/wp-content/uploads/2024/06/client7.png 1000w, https://ParagonTradeInvestment.com/wp-content/uploads/2024/06/client7-300x180.png 300w, https://ParagonTradeInvestment.com/wp-content/uploads/2024/06/client7-768x461.png 768w"
 																sizes="(max-width: 1000px) 100vw, 1000px" />
 														</div>
 													</div>
@@ -2752,7 +2744,7 @@
 																src="wp-content/uploads/2024/06/client3.png"
 																class="elementor-animation-float attachment-large size-large wp-image-121"
 																alt=""
-																srcset="https://ParagonTradeInvestment.com/wp-content/uploads/2024/06/client3.png 1000w, https://ParagonTradeInvestment.com/wp-content/uploads/2024/06/client3-300x180.png 300w, https://ParagonTradeInvestment.com/wp-content/uploads/2024/06/client3-768x461.png 768w"
+																srcset="https://tscassetpro.com/wp-content/uploads/2024/06/client3.png 1000w, https://ParagonTradeInvestment.com/wp-content/uploads/2024/06/client3-300x180.png 300w, https://ParagonTradeInvestment.com/wp-content/uploads/2024/06/client3-768x461.png 768w"
 																sizes="(max-width: 1000px) 100vw, 1000px" />
 														</div>
 													</div>
@@ -2777,7 +2769,7 @@
 																src="wp-content/uploads/2024/06/client5.png"
 																class="elementor-animation-float attachment-large size-large wp-image-122"
 																alt=""
-																srcset="https://ParagonTradeInvestment.com/wp-content/uploads/2024/06/client5.png 1000w, https://ParagonTradeInvestment.com/wp-content/uploads/2024/06/client5-300x180.png 300w, https://ParagonTradeInvestment.com/wp-content/uploads/2024/06/client5-768x461.png 768w"
+																srcset="https://tscassetpro.com/wp-content/uploads/2024/06/client5.png 1000w, https://ParagonTradeInvestment.com/wp-content/uploads/2024/06/client5-300x180.png 300w, https://ParagonTradeInvestment.com/wp-content/uploads/2024/06/client5-768x461.png 768w"
 																sizes="(max-width: 1000px) 100vw, 1000px" />
 														</div>
 													</div>
@@ -2796,7 +2788,7 @@
 																src="wp-content/uploads/2024/06/client6.png"
 																class="elementor-animation-float attachment-large size-large wp-image-123"
 																alt=""
-																srcset="https://ParagonTradeInvestment.com/wp-content/uploads/2024/06/client6.png 1000w, https://ParagonTradeInvestment.com/wp-content/uploads/2024/06/client6-300x180.png 300w, https://ParagonTradeInvestment.com/wp-content/uploads/2024/06/client6-768x461.png 768w"
+																srcset="https://tscassetpro.com/wp-content/uploads/2024/06/client6.png 1000w, https://ParagonTradeInvestment.com/wp-content/uploads/2024/06/client6-300x180.png 300w, https://ParagonTradeInvestment.com/wp-content/uploads/2024/06/client6-768x461.png 768w"
 																sizes="(max-width: 1000px) 100vw, 1000px" />
 														</div>
 													</div>
@@ -2821,7 +2813,7 @@
 																src="wp-content/uploads/2024/06/client4.png"
 																class="elementor-animation-float attachment-large size-large wp-image-124"
 																alt=""
-																srcset="https://ParagonTradeInvestment.com/wp-content/uploads/2024/06/client4.png 1000w, https://ParagonTradeInvestment.com/wp-content/uploads/2024/06/client4-300x180.png 300w, https://ParagonTradeInvestment.com/wp-content/uploads/2024/06/client4-768x461.png 768w"
+																srcset="https://tscassetpro.com/wp-content/uploads/2024/06/client4.png 1000w, https://ParagonTradeInvestment.com/wp-content/uploads/2024/06/client4-300x180.png 300w, https://ParagonTradeInvestment.com/wp-content/uploads/2024/06/client4-768x461.png 768w"
 																sizes="(max-width: 1000px) 100vw, 1000px" />
 														</div>
 													</div>
@@ -2919,7 +2911,7 @@
 																						src="wp-content/uploads/2024/06/businessman-at-office-CEAWWPH.jpg"
 																						class="attachment-full size-full"
 																						alt=""
-																						srcset="https://ParagonTradeInvestment.com/wp-content/uploads/2024/06/businessman-at-office-CEAWWPH.jpg 800w, https://ParagonTradeInvestment.com/wp-content/uploads/2024/06/businessman-at-office-CEAWWPH-300x300.jpg 300w, https://ParagonTradeInvestment.com/wp-content/uploads/2024/06/businessman-at-office-CEAWWPH-150x150.jpg 150w, https://ParagonTradeInvestment.com/wp-content/uploads/2024/06/businessman-at-office-CEAWWPH-768x768.jpg 768w, https://ParagonTradeInvestment.com/wp-content/uploads/2024/06/businessman-at-office-CEAWWPH-600x600.jpg 600w"
+																						srcset="https://tscassetpro.com/wp-content/uploads/2024/06/businessman-at-office-CEAWWPH.jpg 800w, https://ParagonTradeInvestment.com/wp-content/uploads/2024/06/businessman-at-office-CEAWWPH-300x300.jpg 300w, https://ParagonTradeInvestment.com/wp-content/uploads/2024/06/businessman-at-office-CEAWWPH-150x150.jpg 150w, https://ParagonTradeInvestment.com/wp-content/uploads/2024/06/businessman-at-office-CEAWWPH-768x768.jpg 768w, https://ParagonTradeInvestment.com/wp-content/uploads/2024/06/businessman-at-office-CEAWWPH-600x600.jpg 600w"
 																						sizes="(max-width: 800px) 100vw, 800px" />
 																				</div>
 																				<div class="elementskit-profile-info">
@@ -2988,7 +2980,7 @@
 																						src="wp-content/uploads/2024/06/portrait-of-a-business-man-Q5WXLAA.jpg"
 																						class="attachment-full size-full"
 																						alt=""
-																						srcset="https://ParagonTradeInvestment.com/wp-content/uploads/2024/06/portrait-of-a-business-man-Q5WXLAA.jpg 800w, https://ParagonTradeInvestment.com/wp-content/uploads/2024/06/portrait-of-a-business-man-Q5WXLAA-300x300.jpg 300w, https://ParagonTradeInvestment.com/wp-content/uploads/2024/06/portrait-of-a-business-man-Q5WXLAA-150x150.jpg 150w, https://ParagonTradeInvestment.com/wp-content/uploads/2024/06/portrait-of-a-business-man-Q5WXLAA-768x768.jpg 768w, https://ParagonTradeInvestment.com/wp-content/uploads/2024/06/portrait-of-a-business-man-Q5WXLAA-600x600.jpg 600w"
+																						srcset="https://tscassetpro.com/wp-content/uploads/2024/06/portrait-of-a-business-man-Q5WXLAA.jpg 800w, https://ParagonTradeInvestment.com/wp-content/uploads/2024/06/portrait-of-a-business-man-Q5WXLAA-300x300.jpg 300w, https://ParagonTradeInvestment.com/wp-content/uploads/2024/06/portrait-of-a-business-man-Q5WXLAA-150x150.jpg 150w, https://ParagonTradeInvestment.com/wp-content/uploads/2024/06/portrait-of-a-business-man-Q5WXLAA-768x768.jpg 768w, https://ParagonTradeInvestment.com/wp-content/uploads/2024/06/portrait-of-a-business-man-Q5WXLAA-600x600.jpg 600w"
 																						sizes="(max-width: 800px) 100vw, 800px" />
 																				</div>
 																				<div class="elementskit-profile-info">
@@ -3058,7 +3050,7 @@
 																						src="wp-content/uploads/2024/06/businessman-typing-E8MB7ZF.jpg"
 																						class="attachment-full size-full"
 																						alt=""
-																						srcset="https://ParagonTradeInvestment.com/wp-content/uploads/2024/06/businessman-typing-E8MB7ZF.jpg 800w, https://ParagonTradeInvestment.com/wp-content/uploads/2024/06/businessman-typing-E8MB7ZF-300x300.jpg 300w, https://ParagonTradeInvestment.com/wp-content/uploads/2024/06/businessman-typing-E8MB7ZF-150x150.jpg 150w, https://ParagonTradeInvestment.com/wp-content/uploads/2024/06/businessman-typing-E8MB7ZF-768x768.jpg 768w, https://ParagonTradeInvestment.com/wp-content/uploads/2024/06/businessman-typing-E8MB7ZF-600x600.jpg 600w"
+																						srcset="https://tscassetpro.com/wp-content/uploads/2024/06/businessman-typing-E8MB7ZF.jpg 800w, https://ParagonTradeInvestment.com/wp-content/uploads/2024/06/businessman-typing-E8MB7ZF-300x300.jpg 300w, https://ParagonTradeInvestment.com/wp-content/uploads/2024/06/businessman-typing-E8MB7ZF-150x150.jpg 150w, https://ParagonTradeInvestment.com/wp-content/uploads/2024/06/businessman-typing-E8MB7ZF-768x768.jpg 768w, https://ParagonTradeInvestment.com/wp-content/uploads/2024/06/businessman-typing-E8MB7ZF-600x600.jpg 600w"
 																						sizes="(max-width: 800px) 100vw, 800px" />
 																				</div>
 																				<div class="elementskit-profile-info">
@@ -3650,7 +3642,7 @@
 														<div class="box-body">
 															<h4 class="elementskit-info-box-title">
 																Address </h4>
-															<p>2955 Fulton Street, Morgantown, West Virginia</p>
+															<p>2587 Wayne White RD Pleasant Garden NC</p>
 														</div>
 
 
@@ -4503,8 +4495,7 @@
 																				<path
 																					d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z">
 																				</path>
-																			</svg> 2955 Fulton Street, Morgantown, West
-																			Virginia </a>
+																			</svg> 2587 Wayne White RD Pleasant Garden <br/>NC </a>
 																	</li>
 
 																</ul>

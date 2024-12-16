@@ -1,0 +1,94 @@
+/* Existing CSS */
+.proof-of-payment-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.payment-proof-card {
+    background-color: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.payment-proof-card:hover {
+    transform: scale(1.02);
+}
+
+.payment-proof-header {
+    padding: 15px;
+    background-color: #f0f0f0;
+}
+
+.payment-proof-header h3 {
+    margin: 0 0 10px;
+    color: #333;
+}
+
+.payment-proof-header p {
+    margin: 5px 0;
+    color: #666;
+}
+
+.payment-proof-image {
+    width: 100%;
+    max-height: 400px;
+    overflow: hidden;
+}
+
+.payment-proof-image img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.payment-proof-actions {
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+    background-color: #f9f9f9;
+}
+
+.payment-proof-actions form {
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    color: white;
+}
+
+.btn-success {
+    background-color: #28a745;
+    color: white;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+.no-pending-payments {
+    width: 100%;
+    text-align: center;
+    padding: 50px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}

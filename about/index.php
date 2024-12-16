@@ -1,3 +1,19 @@
+<?php
+
+ require_once './account/Dashboard/includes/session.php';
+
+ $isLoggedIn = isset($_SESSION['user_id']);
+
+ $userEmail = isset($_SESSION['user_email']) ? $_SESSION['user_email'] : null;
+
+// If the user is logged in and email is available, get the Gravatar
+
+$username = $_SESSION['username']; 
+
+$avatarUrl = './assets/icon.png';
+
+ ?>
+
 <!DOCTYPE html>
 <html class="html" lang="en-US">
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
@@ -869,6 +885,9 @@
 													</div>
 												</div>
 											</div>
+											<?php if ($isLoggedIn): ?>
+												<li><a href="dashboard.php"><img src="./assets/icon.png" alt="User Icon" class="user-icon" style="border-radius: 50%; width: 30px; height: 30px;"></a></li>
+												<?php else: ?>
 											<div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-199e9812"
 												data-id="199e9812" data-element_type="column">
 												<div class="elementor-widget-wrap elementor-element-populated">
@@ -878,7 +897,7 @@
 														<div class="elementor-widget-container">
 															<div class="elementor-button-wrapper">
 																<a class="elementor-button elementor-button-link elementor-size-sm"
-																	href=".././account/login.html">
+																	href="./account/login.php">
 																	<span class="elementor-button-content-wrapper">
 																		<span class="elementor-button-text">Login</span>
 																	</span>
@@ -897,7 +916,7 @@
 														<div class="elementor-widget-container">
 															<div class="elementor-button-wrapper">
 																<a class="elementor-button elementor-button-link elementor-size-sm"
-																	href=".././account/register.php">
+																	href="./account/register.php">
 																	<span class="elementor-button-content-wrapper">
 																		<span class="elementor-button-text"> Sign
 																			up</span>
@@ -908,6 +927,7 @@
 													</div>
 												</div>
 											</div>
+											<?php endif; ?>
 										</div>
 									</section>
 								</div>
